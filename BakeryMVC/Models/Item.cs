@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace BakeryMVC.Models
 {
     public class Item
     {
