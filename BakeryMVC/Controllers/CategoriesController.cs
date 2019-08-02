@@ -11,8 +11,8 @@ namespace BakeryMVC.Controllers
     [HttpGet("/categories")]
     public ActionResult Index()
     {
-      List<Category> allCategories = Category.GetAll();
-      return View(allCategories);
+      List<Category> allVendors = Category.GetAll();
+      return View(allVendors);
     }
 
     [HttpGet("/categories/new")]
@@ -22,9 +22,9 @@ namespace BakeryMVC.Controllers
     }
 
     [HttpPost("/categories")]
-    public ActionResult Create(string categoryName)
+    public ActionResult Create(string vendorName)
     {
-      Category newCategory = new Category(categoryName);
+      Category newVendor = new Category(vendorName);
       return RedirectToAction("Index");
     }
 
@@ -32,24 +32,24 @@ namespace BakeryMVC.Controllers
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(id);
-      List<Item> categoryItems = selectedCategory.Items;
-      model.Add("category", selectedCategory);
-      model.Add("items", categoryItems);
+      Category selectedVendor = Category.Find(id);
+      List<Item> vendorItems = selectedVendor.Items;
+      model.Add("vendor", selectedVendor);
+      model.Add("items", vendorItems);
       return View(model);
     }
 
-    // This one creates new Items within a given Category, not new Categories:
-    [HttpPost("/categories/{categoryId}/items")]
-    public ActionResult Create(int categoryId, string itemDescription)
+    // This one creates new Items within a given Category of Vendor, not new Categories:
+    [HttpPost("/categories/{vendorId}/items")]
+    public ActionResult Create(int vendorId, string itemDescription)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category foundCategory = Category.Find(categoryId);
+      Category foundVendor = Category.Find(vendorId);
       Item newItem = new Item(itemDescription);
-      foundCategory.AddItem(newItem);
-      List<Item> categoryItems = foundCategory.Items;
-      model.Add("items", categoryItems);
-      model.Add("category", foundCategory);
+      foundVendor.AddItem(newItem);
+      List<Item> vendorItems = foundVendor.Items;
+      model.Add("items", vendorItems);
+      model.Add("vendor", foundVendor);
       return View("Show", model);
     }
 

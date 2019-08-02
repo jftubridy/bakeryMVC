@@ -9,9 +9,9 @@ namespace BakeryMVC.Models
         public int Id { get; }
         public List<Item> Items { get; set; }
 
-        public Category(string categoryName)
+        public Category(string vendorName)
         {
-            Name = categoryName;
+            Name = vendorName;
             _instances.Add(this);
             Id = _instances.Count;
             Items = new List<Item> { };

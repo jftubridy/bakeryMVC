@@ -7,21 +7,21 @@ namespace BakeryMVC.Controllers
   public class ItemsController : Controller
   {
 
-    [HttpGet("/categories/{categoryId}/items/new")]
-    public ActionResult New(int categoryId)
+    [HttpGet("/categories/{vendorId}/items/new")]
+    public ActionResult New(int vendorId)
     {
-       Category category = Category.Find(categoryId);
-       return View(category);
+       Category vendor = Category.Find(vendorId);
+       return View(vendor);
     }
 
-    [HttpGet("/categories/{categoryId}/items/{itemId}")]
-    public ActionResult Show(int categoryId, int itemId)
+    [HttpGet("/categories/{vendorId}/items/{itemId}")]
+    public ActionResult Show(int vendorId, int itemId)
     {
       Item item = Item.Find(itemId);
-      Category category = Category.Find(categoryId);
+      Category vendor = Category.Find(vendorId);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("item", item);
-      model.Add("category", category);
+      model.Add("vendor", vendor);
       return View(model);
     }
 
