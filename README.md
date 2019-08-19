@@ -11,15 +11,16 @@ This program allows Pierre to keep track of his many vendors and their orders.
 
 ### Specs
 | Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
-| **Shows a list of vendors added** | Select vendors | shows vendors added |
+| **Shows a list of vendors added** | Select vendors | Shows vendors added |
 | **Adds new vendors** | Add Vendor | Adds a vendor that the user identifies |
 | **Adds an order to a vendor** | Add an order | Adds an order to a vendor |
 
 ## Setup/Installation Requirements
 
 1. Clone this repository.
-2. dotnet run in your console.
+2. In your console go to BakeryMVC.Solution/BakeryMVC.
+3. Type dotnet restore then dotnet run in your console.
+4. Use browser to go to localhost:5000.
 
 ## Known Bugs
 * There are no known bugs at this time.

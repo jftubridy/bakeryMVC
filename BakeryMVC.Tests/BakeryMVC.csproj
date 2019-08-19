@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
-  <ItemGroup>
+  <OrderGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.11" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.11" />
-  </ItemGroup>
+  </OrderGroup>
 
-  <ItemGroup>
+  <OrderGroup>
     <ProjectReference Include="..\BakeryMVC.csproj" />
-  </ItemGroup>
+  </OrderGroup>
 </Project>
