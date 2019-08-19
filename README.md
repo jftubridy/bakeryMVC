@@ -11,6 +11,7 @@ This program allows Pierre to keep track of his many vendors and their orders.
 
 ### Specs
 | Spec | Input | Output |
+| :-------------     | :------------- | :------------- |
 | **Shows a list of vendors added** | Select vendors | Shows vendors added |
 | **Adds new vendors** | Add Vendor | Adds a vendor that the user identifies |
 | **Adds an order to a vendor** | Add an order | Adds an order to a vendor |
